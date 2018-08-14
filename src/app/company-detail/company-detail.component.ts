@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 
 export class CompanyDetailComponent implements OnInit {
-  @Input()  company:Company;//@Input 装饰器来让company属性可以在外部的CompaniesComponent中绑定。
+  @Input()  company:Company; //@Input 装饰器来让company属性可以在外部的CompaniesComponent中绑定。
   constructor(
     private route:ActivatedRoute,
     private companyService:CompanyService,
@@ -21,7 +21,7 @@ export class CompanyDetailComponent implements OnInit {
   ngOnInit() {
     this.getCompany();
   }
-  getCompany():void{
+  getCompany(): void{
     const id = +this.route.snapshot.paramMap.get('id');
     this.companyService.getCompany(id)
       .subscribe(company => this.company=company);
