@@ -1,0 +1,14 @@
+<div *ngIf="company">
+    <h2>{{company.name | uppercase}} 详情</h2>
+    <div><span>编号: </span>{{company.id}}</div>
+    <div><span>名称: </span>{{company.name}}</div>
+    <div><span>成立年份: </span>{{company.established_time}}</div>
+    <div><span>主要业务: </span>{{company.main_business}}</div>
+    <div>
+      <label>名称:<input [(ngModel)]="company.name" placeholder="输入名称"></label>
+      <label>成立年份:<input [(ngModel)]="company.established_time" placeholder="输入成立年份"></label>
+      <label>主要业务:<input [(ngModel)]="company.main_business" placeholder="输入主要业务"></label>
+    </div>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>

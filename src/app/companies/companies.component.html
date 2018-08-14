@@ -1,0 +1,27 @@
+<h2>企业列表</h2>
+<div>
+  <label>名称:<input #name /></label>
+  <label>成立年份:<input #time /></label>
+  <label>主要业务:<input #business /></label>
+  <button (click)="add(name.value,time.value,business.value);
+                   name.value='';
+                   time.value='';
+                   business.value='' 
+                  ">
+    添加
+  </button>
+</div>
+
+<ul class="companies">
+  <li *ngFor="let company of companies" >
+    <a routerLink="/detail/{{company.id}}">
+      <span class="badge">{{company.id}}</span>   {{company.name}}   {{company.established_time}}   {{company.main_business}}
+    </a>
+    <button class="delete" title="删除" (click)="delete(company)">X</button>
+  </li>
+</ul>
+
+
+
+<!-- 从父到子的属性绑定 -->
+<!-- <app-company-detail [company]="selectedCompany"></app-company-detail> -->
